@@ -14,7 +14,7 @@ install:
 before_script:
   - env | sort
   - cd "$VERSION"
-  - image="mongo:$VERSION"
+  - image="h2non/mongo-volumeless:$VERSION"
 
 script:
   - travis_retry docker build -t "$image" .
