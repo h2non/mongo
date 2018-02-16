@@ -19,6 +19,7 @@ before_script:
 script:
   - travis_retry docker build -t "$image" .
   - ~/official-images/test/run.sh "$image"
+  - docker images
   - docker push "$image"
 
 after_script:
