@@ -16,6 +16,12 @@ Sure.
 
 Let's say you want have an app that's consuming Mongo and you want to provide it along with an immutable constainer that has preloaded data that you seed before.
 
+Users running your container will always have deterministic data in the database and data mutations will only persist within the container execution time frame.
+
+Killing the container and runnig it again will restore the database to the initial, predefined state.
+
+This is very useful in development or testing, where you want to provide a concrete database state with seed data.
+
 ## Usage
 
 Pull the image, my friend:
