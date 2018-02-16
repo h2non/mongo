@@ -14,13 +14,13 @@ install:
 before_script:
   - env | sort
   - cd "$VERSION"
-  - image="h2non/mongo-volumeless:$VERSION"
+  - image="mongo-volumeless:$VERSION"
 
 script:
-  - travis_retry docker build -t "$image" .
-  - ~/official-images/test/run.sh "$image"
+  - travis_retry docker build -t "h2non/$image" .
+  - ~/official-images/test/run.sh "h2non/$image"
   - docker images
-  - docker push "$image"
+  - docker push "h2non/$image"
 
 after_script:
   - docker images
